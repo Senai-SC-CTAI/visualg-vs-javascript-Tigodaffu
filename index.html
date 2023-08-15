@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feira de Livros</title>
+<style>
+  body {
+    text-align: center;
+    color: chartreuse;
+    background-image: url(https://th.bing.com/th/id/R.f220ea0792f0acb84042cb0cd6d68992?rik=W6pcNCcl2McFdQ&amp;riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2015%2f12%2f24110-landscape-nature.jpg&amp;ehk=nF0jn4OzA6WrH6ooNQbf66Lsm8LcoTIt3XRNAOuMhL4%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0);
+    font-size: large;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Algoritmo "Feira de Livros"</h1>
+  <p>Insira os valores dos livros:</p>
+  <label for="livro1">Valor do primeiro livro:</label>
+  <input type="number" id="livro1"><br>
+  <label for="livro2">Valor do segundo livro:</label>
+  <input type="number" id="livro2"><br>
+  <label for="livro3">Valor do terceiro livro:</label>
+  <input type="number" id="livro3"><br>
+  <button onclick="calcularDesconto()">Calcular</button>
+  <h2>Resultado:</h2>
+  <p id="resultado"></p>
+</div>
+<h3>Algoritmo 37 - "Desconto Livros"
+  Uma feira de livros está fazendo promoção onde na compra de 3 livros, o(a) comprador(a) ganha 15% de desconto. Criar um programa que receba os valores dos 3 livros e mostra na tela o total dos livros sem desconto e com desconto.
+  </h3>
+<img src="Script.png" alt="100">
+<h3>Pseudocódigo:
+  algoritmo "Feira de Livros" <br>
+  var
+  livro1, livro2, livro3: real <br>
+  totalSemDesconto, totalComDesconto: real <br>
+  desconto: real <br>
+  inicio
+  escreva("Digite o valor do primeiro livro: ") <br>
+  leia(livro1)
+  escreva("Digite o valor do segundo livro: ") <br>
+  leia(livro2)
+  escreva("Digite o valor do terceiro livro: ") <br>
+  leia(livro3)
+  totalSemDesconto <- livro1 + livro2 + livro3 <br>
+  desconto <- totalSemDesconto * 0.15 <br>
+  totalComDesconto <- totalSemDesconto - desconto <br>
+  escreva("Total sem desconto: ", totalSemDesconto) <br>
+  escreva("Total com desconto: ", totalComDesconto) <br>
+  fimalgoritmo <br></h3>
+<img src="VisualG.png" alt="100">
+
+<script>
+function calcularDesconto() {
+  var livro1 = parseFloat(document.getElementById("livro1").value);
+  var livro2 = parseFloat(document.getElementById("livro2").value);
+  var livro3 = parseFloat(document.getElementById("livro3").value);
+  
+  var totalSemDesconto = livro1 + livro2 + livro3;
+  var desconto = totalSemDesconto * 0.15;
+  var totalComDesconto = totalSemDesconto - desconto;
+  
+  var resultado = "Total sem desconto: " + totalSemDesconto.toFixed(2) + "<br>";
+  resultado += "Total com desconto: " + totalComDesconto.toFixed(2);
+  
+  document.getElementById("resultado").innerHTML = resultado;
+}
+</script>
+</body>
+</html>
